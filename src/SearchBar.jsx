@@ -20,7 +20,7 @@ class SearchBar extends Component {
           value={this.state.term}
           onChange={this._updateTerm}
         />
-        <button>🕵️‍</button>
+        <button onClick={this._handleClick}>🕵️‍</button>
       </header>
     );
   }
@@ -28,5 +28,9 @@ class SearchBar extends Component {
   _updateTerm(e) {
     this.setState({ term: e.target.value });
   }
+
+  _handleClick = () => {
+    this.props.onSearch(this.state.term);
+  };
 }
 export default SearchBar;
