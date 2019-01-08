@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar.jsx';
+import ImageList from './ImageList.jsx';
 
 class App extends Component {
   constructor() {
@@ -15,14 +16,7 @@ class App extends Component {
       <div className="container">
         <h1>Reddit Search</h1>
         <SearchBar onSearch={this._performSearch} />
-        <main>
-          <img src="http://fillmurray.com/200/200" />
-          <img src="http://fillmurray.com/200/200" />
-          <img src="http://fillmurray.com/200/200" />
-          <img src="http://fillmurray.com/200/200" />
-          <img src="http://fillmurray.com/200/200" />
-          <img src="http://fillmurray.com/200/200" />
-        </main>
+        <ImageList images={this.state.results} />
       </div>
     );
   }
